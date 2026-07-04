@@ -401,11 +401,11 @@ Transform:
   m_GameObject: {fileID: 128256646}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 20}
+  m_LocalPosition: {x: 14, y: -1, z: 20}
   m_LocalScale: {x: 6, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2139634311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &243816590
 GameObject:
@@ -898,7 +898,7 @@ Transform:
   m_GameObject: {fileID: 477951573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 5, z: 20}
+  m_LocalPosition: {x: 14, y: 10, z: 20}
   m_LocalScale: {x: 4, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1384,8 +1384,8 @@ Transform:
   m_GameObject: {fileID: 881194991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.5, y: 2.5, z: 21}
-  m_LocalScale: {x: 1, y: 6, z: 4}
+  m_LocalPosition: {x: 11.5, y: 5, z: 21}
+  m_LocalScale: {x: 1, y: 11, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 857878119}
@@ -1481,6 +1481,7 @@ GameObject:
   - component: {fileID: 941675030}
   - component: {fileID: 941675029}
   - component: {fileID: 941675028}
+  - component: {fileID: 941675033}
   m_Layer: 0
   m_Name: wall_maze_obstacle
   m_TagString: Untagged
@@ -1597,6 +1598,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 979220757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941675033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941675026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2df46deb3cb67f3a8248bbde06eab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlidingWall
+  openOffset: {x: 0, y: 0, z: 8}
+  moveSpeed: 8
+  openTime: 3
+  closedTime: 3
 --- !u!1 &951897872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,13 +1744,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951897872}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10, y: 20, z: 10}
+  m_LocalRotation: {x: -0.21640663, y: 0.017038941, z: -0.0037774418, w: -0.97614735}
+  m_LocalPosition: {x: 9, y: 10, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: 358, z: 0}
 --- !u!1 &979220756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1781,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 941675032}
+  - {fileID: 1038268033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038268028
@@ -1779,6 +1797,7 @@ GameObject:
   - component: {fileID: 1038268031}
   - component: {fileID: 1038268030}
   - component: {fileID: 1038268029}
+  - component: {fileID: 1038268034}
   m_Layer: 0
   m_Name: wall_door_obstacle
   m_TagString: Untagged
@@ -1889,12 +1908,28 @@ Transform:
   m_GameObject: {fileID: 1038268028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 3, z: 20}
+  m_LocalPosition: {x: 3.7831097, y: 3, z: 16.37095}
   m_LocalScale: {x: 4, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 979220757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038268034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038268028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2df46deb3cb67f3a8248bbde06eab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlidingWall
+  openOffset: {x: 0, y: 5, z: 0}
+  moveSpeed: 8
+  openTime: 1
+  closedTime: 3
 --- !u!1 &1082148264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,8 +2258,8 @@ Transform:
   m_GameObject: {fileID: 1248632861}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 2.5, z: 19}
-  m_LocalScale: {x: 1, y: 6, z: 4}
+  m_LocalPosition: {x: 16.5, y: 5, z: 19}
+  m_LocalScale: {x: 1, y: 11, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 857878119}
@@ -2450,8 +2485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: -2.8}
-  m_EndPoint: {x: 0, y: 0, z: 2.8}
+  m_StartPoint: {x: -4.5, y: 0, z: 0}
+  m_EndPoint: {x: 4.5, y: 0, z: 0}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
@@ -2470,7 +2505,7 @@ Transform:
   m_GameObject: {fileID: 1820061896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0.5, z: 5}
+  m_LocalPosition: {x: 7, y: 0.5, z: 18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2621,6 +2656,7 @@ Transform:
   - {fileID: 857878119}
   - {fileID: 417820537}
   - {fileID: 1307566543}
+  - {fileID: 128256650}
   - {fileID: 1082148268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2635,5 +2671,3 @@ SceneRoots:
   - {fileID: 757098083}
   - {fileID: 98454286}
   - {fileID: 1820061898}
-  - {fileID: 128256650}
-  - {fileID: 1038268033}
