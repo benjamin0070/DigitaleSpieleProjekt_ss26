@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlidingWall : MonoBehaviour
+public class SlidingTurningWall : MonoBehaviour
 {
     public Vector3 destinationOffset = new Vector3(0, 0, 8f);
     public float moveSpeed = 8f;
@@ -42,11 +42,13 @@ public class SlidingWall : MonoBehaviour
             {
                 targetPos = initialPos;
                 maxTimer = destinationPositionWaitTime;
+                transform.Rotate(0f, 180f, 0f);
             }
             else
             {
                 targetPos = destinationPos;
                 maxTimer = initialPositionWaitTime;
+                transform.Rotate(0f, 180f, 0f);
             }
         }
     }
