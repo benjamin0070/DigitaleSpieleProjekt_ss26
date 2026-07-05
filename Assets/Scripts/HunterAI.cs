@@ -37,8 +37,6 @@ public class HunterAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
-        Debug.Log("Player: " + player);
     }
 
     void Update()
@@ -147,10 +145,8 @@ public class HunterAI : MonoBehaviour
 
         if (!agent.pathPending && agent.remainingDistance < 1f)
         {
-            Vector3 target = ConeWanderPoint(Random.Range(-90f, 90f), searchRadius);
-
+            Vector3 target = ConePoint(Random.Range(-90f, 90f), searchRadius);
             NavMeshHit hit;
-
             if (NavMesh.SamplePosition(target, out hit, 2f, NavMesh.AllAreas))
             {
                 agent.SetDestination(hit.position);
@@ -162,10 +158,8 @@ public class HunterAI : MonoBehaviour
     {
         if (!agent.pathPending && agent.remainingDistance < 1f)
         {
-            Vector3 target = ConeWanderPoint(Random.Range(-45f, 45f), wanderRadius);
-
+            Vector3 target = ConePoint(Random.Range(-45f, 45f), wanderRadius);
             NavMeshHit hit;
-
             if (NavMesh.SamplePosition(target, out hit, 2f, NavMesh.AllAreas))
             {
                 agent.SetDestination(hit.position);
@@ -173,10 +167,10 @@ public class HunterAI : MonoBehaviour
         }
     }
 
-    Vector3 ConeWanderPoint(float angle, float radius)
+    Vector3 ConePoint(float angle, float radius)
     {
         Vector3 direction = Quaternion.Euler(0, angle, 0) * transform.forward;
-        Vector3 randomDistance = direction * Random.Range(3f, radius);
+        Vector3 randomDistance = direction * Random.Range(1f, radius);
         return transform.position + randomDistance;
     }
 }
