@@ -13,7 +13,7 @@ public class SlidingWall : MonoBehaviour
     private Vector3 targetPos;
 
     private float maxTimer;
-    private bool isAtTarget = true;
+    private bool isAtDestinationPos = false;
 
     void Start()
     {
@@ -36,9 +36,9 @@ public class SlidingWall : MonoBehaviour
 
         if (maxTimer <= 0f)
         {
-            isAtTarget = !isAtTarget;
+            isAtDestinationPos = !isAtDestinationPos;
 
-            if (isAtTarget)
+            if (isAtDestinationPos)
             {
                 targetPos = initialPos;
                 maxTimer = destinationPositionWaitTime;
