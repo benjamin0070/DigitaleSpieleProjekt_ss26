@@ -1497,10 +1497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2df46deb3cb67f3a8248bbde06eab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlidingWall
-  openOffset: {x: 0, y: 0, z: 8}
+  destinationOffset: {x: 0, y: 0, z: 8}
   moveSpeed: 8
-  openTime: 3
-  closedTime: 3
+  initialPositionWaitTime: 3
+  destinationPositionWaitTime: 3
 --- !u!1 &951897872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,10 +1814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2df46deb3cb67f3a8248bbde06eab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlidingWall
-  openOffset: {x: 0, y: 3, z: 0}
+  destinationOffset: {x: 0, y: 3, z: 0}
   moveSpeed: 8
-  openTime: 1
-  closedTime: 3
+  initialPositionWaitTime: 1
+  destinationPositionWaitTime: 3
 --- !u!1 &1082148264
 GameObject:
   m_ObjectHideFlags: 0

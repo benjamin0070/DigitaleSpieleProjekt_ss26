@@ -2,54 +2,51 @@ using UnityEngine;
 
 public class SlidingWall : MonoBehaviour
 {
-    public Vector3 openOffset = new Vector3(0, 0, 8f);
+    public Vector3 destinationOffset = new Vector3(0, 0, 8f);
     public float moveSpeed = 8f;
 
+    public float initialPositionWaitTime = 3f;
+    public float destinationPositionWaitTime = 3f;
 
-    public float openTime = 3f;
-    public float closedTime = 3f;
-
-    private Vector3 closedPos;
-    private Vector3 openPos;
-
+    private Vector3 initialPos;
+    private Vector3 destinationPos;
     private Vector3 targetPos;
-    private float timer;
-    private bool isOpen = false;
+
+    private float maxTimer;
+    private bool isAtTarget = true;
 
     void Start()
     {
-        closedPos = transform.position;
-        openPos = closedPos + openOffset;
+        initialPos = transform.position;
+        destinationPos = initialPos + destinationOffset;
+        targetPos = destinationPos;
 
-        targetPos = closedPos;
-        timer = closedTime;
+        maxTimer = 0f;
     }
 
     void Update()
     {
-        // Move smoothly toward target
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPos,
             moveSpeed * Time.deltaTime
         );
 
-        // Timer logic
-        timer -= Time.deltaTime;
+        maxTimer -= Time.deltaTime;
 
-        if (timer <= 0f)
+        if (maxTimer <= 0f)
         {
-            isOpen = !isOpen;
+            isAtTarget = !isAtTarget;
 
-            if (isOpen)
+            if (isAtTarget)
             {
-                targetPos = openPos;
-                timer = openTime;
+                targetPos = initialPos;
+                maxTimer = destinationPositionWaitTime;
             }
             else
             {
-                targetPos = closedPos;
-                timer = closedTime;
+                targetPos = destinationPos;
+                maxTimer = initialPositionWaitTime;
             }
         }
     }
