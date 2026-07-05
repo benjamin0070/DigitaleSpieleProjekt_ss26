@@ -1,0 +1,15 @@
+Teil 1: Physiksimulation – Dokumentation
+
+Benedikt Mußler 2535302
+
+Steuerung: 
+	Sie ist ganz banal, man kann mit WASD oder den Pfeiltasten die Kugel steuern. Nach hinten 
+	fahren geht jedoch nicht, da es in dem spiel kein Sinn macht. Sonst gibt es keine Eingaben 
+	des Users.
+
+Externe Ressourcen: 
+	Ich habe mich sehr an dem „Roll-a-Ball“-Tutorial inspiriert, und dabei einiges gelernt, was 	mir hier sehr zur Hilfe kam. Jedoch habe ich nichts 1zu1 kopiert.
+
+Herausforderungen: 
+	Die Aufgabe an sich war nicht sehr schwer, da ich die wahrscheinlich die
+	leichteste hatte, aber da ich noch nie Unity genutzt habe, musste ich viel neues auf einmal 	lernen. Dabei hat mir aber das „Roll-a-Ball“-Tutorial sehr geholfen.
